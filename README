@@ -1,0 +1,23 @@
+== Learning Modules
+
+Quick Start:
+
+1. Unzip contents.
+
+2. Edit config/database.yml (onl
+
+3. Create blank database with credentials supplied in database.yml
+
+4. Load the database schema - run the rake task (replace 'whatever' with development or production):
+  rake db:schema:load RAILS_ENV=whatever
+
+5. Start the server:
+  Development: script/server
+  Production: Set up web server (Apache with Passenger mod is recommended)
+
+6. Visit the page and you will be prompted to create:
+  a. An admin User
+  b. At least one Module
+  c. At least one Site Page
+
+7. From there you should be able to continue to create content. Take note of the Admin section of the menu as well.  

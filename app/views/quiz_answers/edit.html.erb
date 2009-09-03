@@ -1,0 +1,20 @@
+<h1>Editing quiz_answer</h1>
+
+<% form_for(@quiz_answer) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :quiz_question_id %><br />
+    <%= f.text_field :quiz_question_id %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @quiz_answer %> |
+<%= link_to 'Back', quiz_answers_path %>

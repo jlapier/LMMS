@@ -1,0 +1,27 @@
+<div class="lm_side_image">
+  <%= image_tag @learning_module.layout_image.url %>
+</div>
+
+<div class="lm_content">
+  <h1>Module: <%= @learning_module.title %></h1>
+
+  <p class="admin_only">
+    <%= link_to 'edit title/layout', edit_learning_module_path(@learning_module) %> |
+    <%= link_to 'delete this module', @learning_module, :confirm => 'Are you sure you want to completely remove this module?', :method => :delete %> |
+    <%= link_to 'back', learning_modules_path %>
+  </p>
+
+  <h2>Sections</h2>
+
+  <ol class="contents">
+  <% for section in @learning_module.sections %>
+    <li>
+      <%= link_to section.title, learning_module_section_path(@learning_module, section) %>
+    </li>
+  <% end %>
+  </ol>
+
+  <p class="admin_only">
+    <%= link_to 'create new section', new_learning_module_section_path(@learning_module) %>
+  </p>
+</div>

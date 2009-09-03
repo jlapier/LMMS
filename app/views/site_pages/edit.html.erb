@@ -1,0 +1,33 @@
+<div class="full_page">
+  <h3>Editing page</h3>
+
+  <% form_for(@site_page, :html => { :multipart => true }) do |form| %>
+    <%= render :partial => form %>
+    <p>
+      <%= form.label :layout_image %> (will be resized to 350 pixels by 425 pixels, retaining aspect ratio)<br />
+      <%= form.file_field :layout_image %>
+      <% if @site_page.layout_image_file_name %>
+        <br/>Current Image:<br/>
+        <%= image_tag @site_page.layout_image.url(:thumb) %><br/>
+        Check to set to no image: <%= check_box_tag :drop_image %>
+      <% end %>
+    </p>
+    <p>
+      <%= form.submit "Update this page" %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Back', site_pages_path %>
+</div>
+
+<script type="text/javascript" src="/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+
+window.onload = function()
+{
+  var oFCKeditorMain = new FCKeditor( 'site_page[body]' ) ;
+  oFCKeditorMain.Height = "450px";
+  oFCKeditorMain.ReplaceTextarea();
+}
+
+</script>

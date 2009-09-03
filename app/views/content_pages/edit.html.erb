@@ -1,0 +1,57 @@
+<div class="edit_content_box">
+  <h1><%= link_to @learning_module.title, @learning_module %></h1>
+
+  <h2><%= @section.title %></h2>
+
+  <h3>Editing page</h3>
+
+  <% form_for(:content_page, :url => { :action => :update, :learning_module_id => @learning_module, :section_id => @section },
+                  :html => { :method => :put, :multipart => true }) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %> (optional):
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :main_body, "Main Body for the Page - if this is a Q&A, this is the Q" %><br />
+      <%= f.text_area :main_body, :cols => 80, :rows => 5 %>
+    </p>
+    <p>
+      <%= f.label :secondary_body, "Secondary Body - shown when 'more' link is clicked - if this is a Q&A, this is the A" %><br />
+      <%= f.text_area :secondary_body, :cols => 80, :rows => 5 %>
+    </p>
+    <p>
+      <%= f.label :layout_image %> (will be resized to 350 pixels by 425 pixels, retaining aspect ratio)<br />
+      <%= f.file_field :layout_image %>
+      <% if @content_page.layout_image_file_name %>
+        <br/>Current Image:<br/>
+        <%= image_tag @content_page.layout_image.url(:thumb) %><br/>
+        Check to set to no image: <%= check_box_tag :drop_image %>
+      <% end %>
+    </p>
+    <p>
+      <%= f.submit "Save" %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Show', learning_module_section_content_page_path(@learning_module, @section, @content_page) %> |
+  <%= link_to 'Back', learning_module_section_path(@learning_module, @section) %>
+</div>
+
+
+
+<script type="text/javascript" src="/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+
+window.onload = function()
+{
+  var oFCKeditorMain = new FCKeditor( 'content_page[main_body]' ) ;
+  oFCKeditorMain.Height = "300px";
+  oFCKeditorMain.ReplaceTextarea();
+  var oFCKeditorSec = new FCKeditor( 'content_page[secondary_body]' ) ;
+  oFCKeditorSec.Height = "300px";
+  oFCKeditorSec.ReplaceTextarea() ;
+}
+
+</script>

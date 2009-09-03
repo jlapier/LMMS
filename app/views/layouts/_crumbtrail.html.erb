@@ -1,0 +1,37 @@
+<% if @learning_module %>
+  <div class="title_bar module_title_bar">
+    <div style="width: 600px; float:left;">
+      <strong>Module: <%= @learning_module.title %></strong>
+    </div>
+    <% if @section %>
+      <div style="width: 120px; float:right; text-align:right;">
+        <%= link_to 'Module Index', @learning_module %>
+      </div>
+    <% end %>
+  </div>
+  <% if @section %>
+    <div class="title_bar section_title_bar">
+      <div style="width: 600px; float:left;">
+        Section: <%= @section.title %>
+        <% if @content_page %>
+          &gt; <%= @content_page.title %>
+        <% elsif @quiz_page %>
+          &gt; Quiz: <%= @quiz_page.title %>
+          <% if @score %>
+            &gt; Score
+          <% end %>
+        <% end %>
+      </div>
+      <% if @content_page %>
+        <div style="width: 130px; float:right; text-align:right;">
+          <%= link_to 'Section Index', learning_module_section_path(@learning_module, @section) %>
+        </div>
+      <% end %>
+      <% if @quiz_page %>
+        <div style="width: 130px; float:right; text-align:right;">
+          <%= link_to 'Section Quizzes', learning_module_section_quiz_pages_path(@learning_module, @section) %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

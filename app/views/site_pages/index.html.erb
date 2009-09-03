@@ -1,0 +1,17 @@
+<div class="edit_content_box">
+  <ol class="contents">
+    <h1>About this site</h1>
+  <% for site_page in @site_pages %>
+    <li>
+      <%= link_to site_page.title, site_page %>
+    </li>
+  <% end %>
+  </ol>
+
+  <br/>
+  <p class="admin_only">
+    <%= link_to 'create new page', new_site_page_path %>
+  </p>
+
+</div>
+

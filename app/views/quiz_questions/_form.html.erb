@@ -1,0 +1,22 @@
+<%= form.error_messages %>
+
+<p>
+  <%= form.label "Quiz Page" %>:
+  <%= form.select :quiz_page_id, @section.quiz_pages.map { |qp| [ qp.title, qp.id ] } %>
+</p>
+<p>
+  <%= form.label "Question title" %> (not displayed to user):
+  <%= form.text_field :title %>
+</p>
+<p>
+  <%= form.label "Question Body" %> (displayed to user):<br />
+  <%= form.text_area :body, :cols => 80, :rows => 2 %>
+</p>
+<p>
+  <%= form.label :explanation %> (displayed after question is answered):<br />
+  <%= form.text_area :explanation, :cols => 80, :rows => 2 %>
+</p>
+<p>
+  <%= form.label "List answers" %> (one per line - first answer assumed to be correct; order is randomized when shown to user):<br />
+  <%= form.text_area :answers_string, :cols => 80, :rows => 4 %>
+</p>

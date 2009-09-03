@@ -1,0 +1,16 @@
+<div id="whitestage">
+  <h1>New Module</h1>
+
+  <% form_for(@learning_module) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %>: <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.submit "Create" %>
+    </p>
+  <% end %>
+  <br/>
+  <p><%= link_to 'Back', learning_modules_path %></p>
+</div>

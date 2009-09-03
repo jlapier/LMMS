@@ -1,0 +1,62 @@
+<div class="quiz_side_image">
+  <% if @quiz_page.layout_image_file_name %>
+    <%= image_tag @quiz_page.layout_image.url %>
+  <% else %>
+    <%= image_tag @learning_module.layout_image.url %>
+  <% end %>
+</div>
+
+<div class="quiz_content">
+  <% unless @quiz_page.title.blank? %>
+    <h1 style="margin: 8px 0px;"><%= @quiz_page.title %></h1>
+  <% end %>
+  <p class="admin_only">
+    <%= link_to 'Edit narrative/layout', edit_learning_module_section_quiz_page_path(@learning_module, @section, @quiz_page) %> |
+    <%= link_to 'Delete entire page', learning_module_section_quiz_page_path(@learning_module, @section, @quiz_page), :method => :delete,
+      :confirm => "Are you sure you want to delete this page? This action cannot be undone." %> |
+    <%= link_to 'Manage questions', learning_module_section_quiz_page_quiz_questions_path(@learning_module, @section, @quiz_page) %>
+  </p>
+
+  <div class="quiz_setup_body">
+    <%= @quiz_page.setup_body %>
+  </div>
+
+  <div id="questions">
+    
+    <% if @quiz_page.quiz_questions.empty? %>
+      <p class="large_text"><em>No questions found.</em></p>
+
+    <% end %>
+
+    <div id="question_display"></div>
+    <div id="incorrect_popup" style="display:none; text-align:center;">sorry</div>
+    <div id="correct_popup" style="display:none; text-align:center;">correct!</div>
+    <div id="explanation" style="display:none;"></div>
+  </div>
+
+</div>
+
+<% unless @quiz_page.quiz_questions.empty? %>
+  <% content_for :javascript do %>
+    <script type="text/javascript">
+      var quiz_questions = [
+        <%= @quiz_page.quiz_questions.map { |question|
+          "new QuizQuestion('#{escape_javascript question.body}'," +
+            "#{question.id}," +
+            "[ #{question.quiz_answers.sort_by{rand}.map { |answer| "'#{escape_javascript answer.body}'" }.join(', ')}]" +
+            ")" }.join(", \n") %>
+      ];
+
+      var on_question_index = 0;
+
+      Event.observe(window, 'load', function() {
+        $('question_display').update( quiz_questions[on_question_index].to_html(on_question_index) );
+
+        Event.addBehavior({
+          '.question_form': QuestionForm,
+          '#next_arrows a': GotoQuestion
+        });
+      });
+    </script>
+  <% end %>
+<% end %>

@@ -1,0 +1,42 @@
+<h1>Welcome to your Learning Modules Site</h1>
+
+<div class="sp_content">
+  <p>
+    If you're seeing this page, it might mean that this site still needs a few things.
+  </p>
+
+  <p>If you are a visitor, please try again later.</p>
+
+  <p>
+    If you are setting up this site, let's go over the checklist:
+    <ul class="clean_list">
+      <li>
+        <% if @have_a_user %>
+          <%= image_tag "buttons/check_green.png" %> <span class="green">You have created at least one user account.</span>
+        <% else %>
+          <%= image_tag "buttons/check_empty.png" %>
+          <span class="yellow_background">You need to
+            <%= link_to "create your first user account", new_user_path %>.</span>
+        <% end %>
+      </li>
+      <li>
+        <% if @have_a_site_page %>
+          <%= image_tag "buttons/check_green.png" %> <span class="green">You have created at least one site-wide information page.</span>
+        <% else %>
+          <%= image_tag "buttons/check_empty.png" %>
+          <span class="yellow_background">You need to
+            <%= link_to "create at least one site-wide information page", new_site_page_path %>.</span>
+        <% end %>
+      </li>
+      <li>
+        <% if @have_a_module %>
+          <%= image_tag "buttons/check_green.png" %> <span class="green">You have started at least one module.</span>
+        <% else %>
+          <%= image_tag "buttons/check_empty.png" %>
+            <span class="yellow_background">You need to
+              <%= link_to "create your first learning module", new_learning_module_path %>.</span>
+        <% end %>
+      </li>
+    </ul>
+  </p>
+</div>

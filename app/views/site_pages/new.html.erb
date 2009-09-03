@@ -1,0 +1,24 @@
+<div class="full_page">
+  <h3>New page</h3>
+
+  <% form_for(@site_page) do |form| %>
+    <%= render :partial => form %>
+    <p>
+      <%= form.submit "Create this page" %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Back', site_pages_path %>
+</div>
+
+<script type="text/javascript" src="/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+
+window.onload = function()
+{
+  var oFCKeditorMain = new FCKeditor( 'site_page[body]' ) ;
+  oFCKeditorMain.Height = "250px";
+  oFCKeditorMain.ReplaceTextarea();
+}
+
+</script>

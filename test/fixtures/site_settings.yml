@@ -1,0 +1,34 @@
+# == Schema Information
+# Schema version: 20090807161933
+#
+# Table name: site_settings
+#
+#  id                      :integer       not null, primary key
+#  setting_name            :string(255)   
+#  setting_string_value    :string(255)   
+#  setting_text_value      :text          
+#  setting_number_value    :integer       
+#  yamled                  :boolean       
+#  logo_image_file_name    :string(255)   
+#  logo_image_content_type :string(255)   
+#  logo_image_file_size    :integer       
+#  logo_image_updated_at   :datetime      
+#  logo_image_alt_text     :string(255)   
+#  created_at              :datetime      
+#  updated_at              :datetime      
+# (end schema)
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  setting_name: MyString
+  setting_string_value: MyString
+  setting_text_value: MyText
+  setting_number_value: 1
+  yamled: false
+
+two:
+  setting_name: MyString
+  setting_string_value: MyString
+  setting_text_value: MyText
+  setting_number_value: 1
+  yamled: false

@@ -1,0 +1,38 @@
+# == Schema Information
+# Schema version: 20090807161933
+#
+# Table name: site_pages
+#
+#  id                        :integer       not null, primary key
+#  title                     :string(255)   
+#  position                  :integer       
+#  body                      :text          
+#  layout_image_file_name    :string(255)   
+#  layout_image_content_type :string(255)   
+#  layout_image_file_size    :integer       
+#  layout_image_updated_at   :datetime      
+#  layout_image_alt_text     :string(255)   
+#  created_at                :datetime      
+#  updated_at                :datetime      
+# (end schema)
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  position: 1
+  body: MyText
+  layout_image_file_name: MyString
+  layout_image_content_type: MyString
+  layout_image_file_size: 1
+  layout_image_updated_at: 2009-07-31 09:52:41
+  layout_image_alt_text: MyString
+
+two:
+  title: MyString
+  position: 1
+  body: MyText
+  layout_image_file_name: MyString
+  layout_image_content_type: MyString
+  layout_image_file_size: 1
+  layout_image_updated_at: 2009-07-31 09:52:41
+  layout_image_alt_text: MyString

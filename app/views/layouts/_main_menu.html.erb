@@ -1,0 +1,58 @@
+<!-- search might go here somewhere -->
+
+<div id="menuwrapper">
+  <ul id="menubar">
+    <li>
+      <%= link_to "Modules", learning_modules_path, :class => "trigger" %>
+      <ul>
+        <% for learning_module in modules_for_menu %>
+          <li><%= link_to learning_module.title, learning_module %></li>
+        <% end %>
+      </ul>
+    <li>
+      <%= link_to "Sections", @learning_module ? learning_module : "#", :class => "trigger" %>
+      <ul>
+        <% if sections_for_menu.empty? %>
+          <li><em>choose a module</em></li>
+        <% end %>
+        <% for section in sections_for_menu %>
+          <li><%= link_to section.title, learning_module_section_path(@learning_module, section) %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li>
+      <%= link_to "Quizzes", @section ? learning_module_section_quiz_pages_path(@learning_module, @section) : "#", :class => "trigger" %>
+      <ul>
+        <% if quizzes_for_menu.empty? %>
+          <li><em>no quizzes available for this section</em></li>
+        <% end %>
+
+        <% for quiz in quizzes_for_menu %>
+          <li><%= link_to quiz.title, learning_module_section_quiz_page_path(@learning_module, @section, quiz) %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li>
+      <%= link_to "About", site_pages_path, :class => "trigger" %>
+      <ul>
+        <% if site_pages_for_menu.empty? %>
+          <li><em>additional pages for the site will go here</em></li>
+        <% end %>
+        <% for site_page in site_pages_for_menu %>
+          <li><%= link_to site_page.title, site_page %></li>
+        <% end %>
+      </ul>
+    </li>
+    <% if logged_in? %>
+      <li>
+        <%= link_to "Admin", site_settings_path, :class => "trigger" %>
+        <ul>
+          <li><%= link_to "Site-wide Settings", site_settings_path %></li>
+          <li><%= link_to "User Management", users_path %></li>
+          <li><%= link_to "Log out", logout_path %></li>
+          <%= yield :admin_links %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>

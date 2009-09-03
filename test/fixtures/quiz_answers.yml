@@ -1,0 +1,28 @@
+# == Schema Information
+# Schema version: 20090807161933
+#
+# Table name: quiz_answers
+#
+#  id               :integer       not null, primary key
+#  quiz_question_id :integer       
+#  body             :text          
+#  created_at       :datetime      
+#  updated_at       :datetime      
+# (end schema)
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one_one:
+  quiz_question: one
+  body: answer one to q one
+
+one_two:
+  quiz_question: one
+  body: answer two to q one
+
+two_one:
+  quiz_question: two
+  body: answer one to q two
+
+two_two:
+  quiz_question: two
+  body: answer two to q two

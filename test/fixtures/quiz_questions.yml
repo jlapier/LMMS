@@ -1,0 +1,30 @@
+# == Schema Information
+# Schema version: 20090807161933
+#
+# Table name: quiz_questions
+#
+#  id                :integer       not null, primary key
+#  quiz_page_id      :integer       
+#  title             :string(255)   
+#  position          :integer       
+#  body              :text          
+#  explanation       :text          
+#  correct_answer_id :integer       
+#  created_at        :datetime      
+#  updated_at        :datetime      
+# (end schema)
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  quiz_page: one
+  title: MyString
+  body: MyText
+  explanation: explanation one
+  correct_answer: one_one
+
+two:
+  quiz_page: one
+  title: MyString
+  body: MyText
+  explanation: explanation two
+  correct_answer: two_one

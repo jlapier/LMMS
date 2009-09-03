@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= page_title %></title>
+  <%= javascript_include_tag('prototype', 'effects', 'controls', 'dragdrop', 'lowpro',
+        'quiz_question', 'behaviors', 'application', :cache => true) %>
+  <%= stylesheet_link_tag 'reset', 'main', 'error_messages', 'menu' %>
+  <%# TODO: someday write some different layouts and make this an option %>
+  <%= stylesheet_link_tag 'default_layout' %>
+  
+  <script type="text/javascript">
+    Event.observe(window, 'load', function() {
+      <%# TODO: this looks bad, but don't worry - the filter will catch anyone trying to access editing pages without logging in %>
+      <% unless logged_in? %>
+        $$('.admin_only').invoke('remove');
+      <% end %>
+      Event.addBehavior({
+        '.show_hide_link': ShowHideLink('appear', 'fade', {duration:0.5}, {duration:0.2}, true)
+      });
+    });
+  </script>
+
+  <%= yield :javascript %>
+</head>
+<body>
+
+<% for flash_type in %w(notice warning error) %>
+  <% if flash[flash_type.to_sym] %>
+    <div id="flash_<%= flash_type %>">
+      <%= flash[flash_type.to_sym] %>
+      <div style="float:right; font-size: 9px;">[<%= link_to_function "close", "$('flash_#{flash_type}').fade();" %>]</div>
+    </div>
+  <% end %>
+<% end %>
+
+
+<div id="banner">
+  <div id="buttons_and_logo">
+    <div class="site_title">
+      <%= site_title %>
+    </div>
+    <br/>
+    <%= render :partial => '/layouts/main_menu' %>
+  </div>
+
+  <div id="logo"><%= image_tag site_logo %></div>
+</div>
+
+<div id="stage" <%= (controller_name == "site_pages" or action_name == 'new' or action_name == 'edit') ? 'class="full_height_stage"' : 'class="partial_height_stage"' %>>
+  <%= render :partial => '/layouts/crumbtrail' %>
+
+  <%# main rendered content: %>
+  <%= yield  %>
+</div>
+
+<% unless action_name == 'new' or action_name == 'edit' %>
+  <%= render :partial => '/layouts/prev_next_boxes' %>
+<% end %>
+
+<div id="footer">
+  <%= site_footer %>
+</div>
+
+</body>
+</html>

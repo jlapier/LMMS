@@ -1,0 +1,43 @@
+
+<% if @content_page %>
+  <div class="prev_next_box">
+    <div style="width: 200px; float:left; text-align:left;">
+      <%= link_to image_tag("buttons/backToIndex.png"),
+            learning_module_section_path(@learning_module, @section) %>
+    </div>
+
+    <div style="width: 400px; float:right; text-align:right;">
+      <% if @content_page.prev_page %>
+        <%= link_to image_tag("buttons/previousArrow.png"),
+              learning_module_section_content_page_path(@learning_module, @section, @content_page.prev_page) %>
+      <% end %>
+
+      <% if @content_page.next_page %>
+        <%= link_to image_tag("buttons/nextArrow.png"), learning_module_section_content_page_path(@learning_module, @section, @content_page.next_page),
+              :style => (@content_page && !@content_page.secondary_body.blank?) ? 'display:none' : '',
+              :class => (@content_page && !@content_page.secondary_body.blank?) ? 'sec_body' : '' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+<% if @quiz_page %>
+  <div class="prev_next_box">
+    <div style="width: 200px; float:left; text-align:left;">
+      <%= link_to image_tag("buttons/backToIndex.png"),
+            learning_module_section_quiz_pages_path(@learning_module, @section) %>
+    </div>
+
+    <div style="width: 400px; float:right; text-align:right;">
+      <div id="review_score" style="display:none; font-size: 18px; padding: 13px;">
+        <%= link_to "Review Score on this Quiz", score_learning_module_section_quiz_page_path(@learning_module, @section, @quiz_page) %>
+      </div>
+      <span id="next_arrows" style="display:none">
+        <%= link_to image_tag("buttons/previousArrow.png"), '#', :class => 'prev_link'  %>
+        <%= link_to image_tag("buttons/nextArrow.png"), '#', :class => 'next_link' %>
+      </span>
+
+    </div>
+  </div>
+<% end %>

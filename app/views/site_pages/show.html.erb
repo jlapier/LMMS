@@ -1,0 +1,25 @@
+<% cache do %>
+
+  <% if @site_page.layout_image_file_name %>
+  <div class="sp_side_image">
+    <%= image_tag @site_page.layout_image.url %>
+  </div>
+
+  <div class="sp_content sp_content_with_image">
+  <% else %>
+  <div class="sp_content">
+  <% end %>
+    <h1><%= @site_page.title %></h1>
+    <%= @site_page.body %>
+
+  <br/>
+    <p class="admin_only">
+      <%= link_to 'edit', edit_site_page_path(@site_page) %> |
+      <%= link_to 'delete', site_page_path(@site_page), :method => :delete,
+            :confirm => "Are you sure you want to delete this page? This action cannot be undone." %> |
+      <%= link_to 'create new page', new_site_page_path %> |
+      <%= link_to 'all site pages', site_pages_path %>
+    </p>
+  </div>
+  
+<% end %>

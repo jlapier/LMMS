@@ -1,0 +1,28 @@
+<div class="se_side_image">
+  <% if @section.layout_image_file_name %>
+    <%= image_tag @section.layout_image.url %>
+  <% else %>
+    <%= image_tag @learning_module.layout_image.url %>
+  <% end %>
+</div>
+
+<div class="se_content">
+  <h1><%= link_to @learning_module.title, @learning_module %></h1>
+
+  <h2>Section: <%= @section.title %></h2>
+
+  <h3>Quiz Pages</h3>
+
+  <ol class="contents">
+  <% for quiz_page in @quiz_pages %>
+    <li>
+      <%= link_to quiz_page.title_in_list, learning_module_section_quiz_page_path(@learning_module, @section, quiz_page) %>
+    </li>
+  <% end %>
+  </ol>
+
+
+  <p class="admin_only">
+    <%= link_to 'create new quiz page', new_learning_module_section_quiz_page_path(@learning_module, @section) %>
+  </p>
+</div>

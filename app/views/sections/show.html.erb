@@ -1,0 +1,30 @@
+<div class="se_side_image">
+  <% if @section.layout_image_file_name %>
+    <%= image_tag @section.layout_image.url %>
+  <% else %>
+    <%= image_tag @learning_module.layout_image.url %>
+  <% end %>
+</div>
+
+<div class="se_content">
+  <p class="admin_only">
+    <%= link_to 'edit section title/layout', edit_learning_module_section_path(@learning_module, @section) %> |
+    <%= link_to 'back', learning_module_sections_path(@learning_module) %>
+  </p>
+
+  <ol class="contents">
+    <strong>Pages:</strong><br/>
+  <% for content_page in @section.content_pages %>
+    <li>
+      <%= link_to content_page.title_in_list, learning_module_section_content_page_path(@learning_module, @section, content_page) %>
+    </li>
+  <% end %>
+  </ol>
+
+  <p class="admin_only">
+    <%= link_to 'create new page', new_learning_module_section_content_page_path(@learning_module, @section) %>
+  </p>
+
+</div>
+
+

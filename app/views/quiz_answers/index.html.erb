@@ -1,0 +1,22 @@
+<h1>Listing quiz_answers</h1>
+
+<table>
+  <tr>
+    <th>Quiz question</th>
+    <th>Body</th>
+  </tr>
+
+<% for quiz_answer in @quiz_answers %>
+  <tr>
+    <td><%=h quiz_answer.quiz_question_id %></td>
+    <td><%=h quiz_answer.body %></td>
+    <td><%= link_to 'Show', quiz_answer %></td>
+    <td><%= link_to 'Edit', edit_quiz_answer_path(quiz_answer) %></td>
+    <td><%= link_to 'Destroy', quiz_answer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New quiz_answer', new_quiz_answer_path %>

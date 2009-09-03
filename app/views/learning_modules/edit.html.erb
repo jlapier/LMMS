@@ -1,0 +1,27 @@
+<div id="edit_content_box">
+  <h1>Editing Learning Module</h1>
+
+  <% form_for(@learning_module, :html => {:multipart => true}) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :layout_image %> (will be resized to 350 pixels by 425 pixels, retaining aspect ratio)<br />
+      <%= f.file_field :layout_image %>
+      <% if @learning_module.layout_image_file_name %>
+        <br/>Current Image:<br/>
+        <%= image_tag @learning_module.layout_image.url(:thumb) %><br/>
+        Check to set to no image: <%= check_box_tag :drop_image %>
+      <% end %>
+    </p>
+    <p>
+      <%= f.submit "Update" %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Show', @learning_module %> |
+  <%= link_to 'Back', learning_modules_path %>
+</div>

@@ -1,0 +1,86 @@
+@charset "UTF-8";
+.Headline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24pt;
+	font-weight: bold;
+}
+#unitTitle {
+	position: relative;
+	height: 100px;
+	width: 200px;
+	top: 20px;
+	left: -242px;
+}
+
+.bodyText li { list-style-type: decimal; }
+#OnlineTitle {
+	background-image: url(../images/OnlineTitle.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	width: 880px;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-left: auto;
+}
+#banner {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 10pt;
+	background-color: #0082C0;
+	height: 75px;
+	vertical-align: bottom;
+	color: #FFFFFF;
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#stage {
+	background-image: url(../images/ChalkBrd.png);
+	border: 1px solid #000000;
+	background-repeat: no-repeat;
+	padding: 10px;
+	height: 590px;
+	width: 880px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	overflow: scroll;
+}
+#stageA {
+	background-image: url(../images/TintPhotoA.png);
+	border: 6px solid #0082C0;
+	background-repeat: no-repeat;
+	margin: 10px;
+	padding-top: 10px;
+	padding-right: 12px;
+	min-height: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 888px;
+	height: 494px;
+}
+#stageB {
+	background-image: url(../images/TintPhotoB.png);
+	border: 6px solid #0082C0;
+	background-repeat: no-repeat;
+	margin: 10px;
+	padding-top: 10px;
+	padding-right: 12px;
+	min-height: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 888px;
+	height: 494px;
+}
+#stageC {
+	background-image: url(../images/TintPhotoC.png);
+	border: 6px solid #0082C0;
+	background-repeat: no-repeat;
+	margin: 10px;
+	padding-top: 10px;
+	padding-right: 12px;
+	min-height: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 888px;
+	height: 494px;
+}

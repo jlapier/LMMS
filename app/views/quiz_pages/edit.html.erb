@@ -1,0 +1,45 @@
+<div id="edit_content_box">
+
+  <h3>Editing quiz page</h3>
+
+  <% form_for(:quiz_page, :url => { :action => :update, :learning_module_id => @learning_module, :section_id => @section },
+                :html => { :method => :put, :multipart => true }) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %> (optional):
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :setup_body %><br />
+      <%= f.text_area :setup_body %>
+    </p>
+    <p>
+        <%= f.label :layout_image %> (will be resized to 350 pixels by 425 pixels, retaining aspect ratio)<br />
+        <%= f.file_field :layout_image %>
+        <% if @quiz_page.layout_image_file_name %>
+          <br/>Current Image:<br/>
+          <%= image_tag @quiz_page.layout_image.url(:thumb) %><br/>
+          Check to set to no image: <%= check_box_tag :drop_image %>
+        <% end %>
+      </p>
+    <p>
+      <%= f.submit "Save this page" %>
+    </p>
+  <% end %>
+
+  <p><%= link_to 'Cancel edits and go back to this quiz page', learning_module_section_quiz_page_path(@learning_module, @section, @quiz_page) %></p>
+
+</div>
+
+<script type="text/javascript" src="/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+
+window.onload = function()
+{
+  var oFCKeditorMain = new FCKeditor( 'quiz_page[setup_body]' ) ;
+  oFCKeditorMain.Height = "250px";
+  oFCKeditorMain.ReplaceTextarea();
+}
+
+</script>

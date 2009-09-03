@@ -1,0 +1,15 @@
+<h3>New quiz question</h3>
+
+<div class="edit_content_box">
+  <% form_for(:quiz_question, :url => { :action => :create, :learning_module_id => @learning_module, :section_id => @section,
+        :quiz_page_id => @quiz_page }) do |f| %>
+    <%= render :partial => f %>
+
+    <p>
+      <%= f.submit "Create" %>
+    </p>
+  <% end %>
+  <p><%= link_to 'Cancel new question and go back to the list', learning_module_section_quiz_page_quiz_questions_path %></p>
+</div>
+
+

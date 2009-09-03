@@ -1,0 +1,33 @@
+<% cache do %>
+  <div class="cp_side_image">
+    <% if @content_page.layout_image_file_name %>
+      <%= image_tag @content_page.layout_image.url %>
+    <% else %>
+      <%= image_tag @learning_module.layout_image.url %>
+    <% end %>
+  </div>
+
+  <div class="cp_content">
+    <div class="main_body content_body">
+      <%= @content_page.main_body %>
+      <% unless @content_page.secondary_body.blank? %>
+        <p style="text-align:right;"><%= link_to image_tag('buttons/more.png'),
+                  learning_module_section_content_page_path(@learning_module, @section, @content_page, :show => 'sec_body'),
+                  :class => 'show_hide_link' %></p>
+      <% end %>
+    </div>
+
+    <% unless @content_page.secondary_body.blank? %>
+      <div class="sec_body content_body" <%= 'style="display:none"' unless params[:show] == 'sec_body' %>>
+        <%= @content_page.secondary_body %>
+      </div>
+    <% end %>
+
+    <p class="admin_only">
+      <%= link_to 'Edit', edit_learning_module_section_content_page_path(@learning_module, @section, @content_page) %> |
+      <%= link_to 'Delete', learning_module_section_content_page_path(@learning_module, @section, @content_page), :method => :delete,
+        :confirm => "Are you sure you want to delete this page? This action cannot be undone." %> |
+      <%= link_to 'Back', learning_module_section_path(@learning_module, @section) %>
+    </p>
+  </div>
+<% end %>

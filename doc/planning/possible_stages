@@ -1,0 +1,27 @@
+Stages
+======
+
+
+Stage 1: Mimimal, Barebones
+---------------------------
+
+Two basic components - content and quizzes. The content is organized by Module -> Section -> Page. Visitors to the site can view material by going to a table of contents, or going page by page. Quizzes can be presented at the end of each Section. The quizzes are "session-based", so if you close the browser window, the site does not remember how you scored on any quiz.
+
+The site will run in two modes: edit and view-only. When in "edit" mode, anyone can go and add/edit/delete new modules, sections, pages, and quiz questions. Once the content is finalized, I will "flip a switch" to make the site "view-only" so that no one can come along and break it.
+
+
+Stage 2: User Accounts
+----------------------
+
+User accounts serve two functions:
+  1) Answers chosen to quiz questions are saved, so your quiz scores are saved.
+  
+  2) Module content creation and editing - based on permissions.
+
+
+Stage 3: Customizable Modules, Quiz Reports
+-------------------------------------------
+
+Module content can be more than just text. Allow content-creators to upload images, audio, video, and so forth and add them to pages. Layouts of pages can be customized to provide unique color schemes, background images, etc.
+
+In-depth reports related to quizzes. Content-managers can review how visitors scored on various questions, identify which questions are more likely to be answered incorrectly, etc. 

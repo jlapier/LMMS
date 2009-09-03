@@ -1,0 +1,17 @@
+<div class="sp_content">
+  <h1>Welcome!</h1>
+
+  <h2>Please Select a Module:</h2>
+
+  <ol class="contents">
+  <% for learning_module in @learning_modules %>
+    <li>
+      <%= link_to learning_module.title, learning_module %>
+    </li>
+  <% end %>
+  </ol>
+
+  <br />
+
+  <p class="admin_only"><%= link_to 'Create new Module', new_learning_module_path %></p>
+</div>

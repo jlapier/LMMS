@@ -1,0 +1,33 @@
+<div class="edit_content_box">
+  <h3>Creating new quiz page</h3>
+
+  <% form_for(:quiz_page, :url => { :action => :create, :learning_module_id => @learning_module, :section_id => @section }) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %> (optional):
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :setup_body %><br />
+      <%= f.text_area :setup_body %>
+    </p>
+    <p>
+      <%= f.submit "Create this page" %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Back', learning_module_section_quiz_pages_path(@learning_module, @section) %>
+</div>
+
+<script type="text/javascript" src="/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+
+window.onload = function()
+{
+  var oFCKeditorMain = new FCKeditor( 'quiz_page[setup_body]' ) ;
+  oFCKeditorMain.Height = "250px";
+  oFCKeditorMain.ReplaceTextarea();
+}
+
+</script>

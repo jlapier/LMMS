@@ -1,0 +1,52 @@
+
+LearningModule
+ - title
+
+Section
+ - module_id
+ - title
+ - layout_template_id
+
+ContentPage
+ - section_id
+ - title (optional)
+ - main_body
+ - secondary_body
+ - position
+ - layout_template_id (defaults to section layout if blank)
+
+LayoutTemplate (some kind of template - HTML/CSS)
+ - learning_module_id
+ - template_code
+
+Asset (files such as images, SWFs, etc that can be uploaded and referenced in pages and templates)
+ - learning_module_id
+ - filename
+
+User
+
+UserAccess
+ - user_id
+ - module_id
+ - access_level (R or RW)
+
+QuizPage
+ - section_id
+ - title (optional)
+ - setup_text (optional)
+ - layout (defaults to section layout if blank)
+
+QuizQuestion
+ - quiz_page_id
+ - title (optional)
+ - body
+ - correct_answer_id
+
+QuizAnswer (multiple choices for each question)
+ - quiz_question_id
+ - body
+
+UserAnswerToQuestion (to track which answer a user selected for a question)
+ - user_id
+ - quiz_question_id
+ - quiz_answer_id

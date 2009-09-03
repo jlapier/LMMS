@@ -1,0 +1,131 @@
+@charset "UTF-8";
+#buttons {
+	position: relative;
+	width: 830px;
+	left: 20px;
+	top: 20px;
+	display: inline;
+	white-space: nowrap;
+}
+/* CSS Document */
+
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 36pt;
+	font-weight: bold;
+	color: #E78C40;
+}
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24pt;
+	font-weight: bold;
+	color: #000000;
+	line-height: 30px;
+}
+a:link, a:visited {
+	color: #FFFFFF;
+}
+a:hover {
+	color: #0033CC;
+	text-decoration: none;
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	line-height: 14pt;
+	text-align: left;
+}
+.answers {
+	color: #0033CC;
+}
+
+.answers ol { 
+  list-style-position: inside;
+}
+
+.answers li { 
+  margin-left: 20px;
+}
+
+.questions {
+	color: #FFFFFF;
+}
+#OnToQuiz {
+	text-align: right;
+	vertical-align: baseline;
+	margin-right: 20px;
+}
+
+.inserted_answer {
+  color: white;
+  margin: 10px;
+  line-height: 14pt;
+  margin-left: 20px;
+  padding: 8px 10px;
+  font-size: 11pt;
+  background: #333;
+  border: 2px solid #CCC;
+}
+
+.inserted_answer ol { list-style-position: inside; }
+.inserted_answer li { margin-left: 15px; }
+#stageFAQWelcome {
+	border: 6px solid #0082C0;
+	height: 442px;
+	width: 808px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	overflow: hidden;
+	margin-top: 10px;
+	padding: 30px;
+	background-image: url(../images/FAQs/1A-FAQsWelcome.png);
+}
+#bannerFAQs {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 10pt;
+	background-color: #0082C0;
+	height: 70px;
+	color: #FFFFFF;
+	width: 880px;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(../images/Banner-Rt.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.FAQsbody {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: left;
+	vertical-align: top;
+	background-position: top;
+}
+#Qtable {
+	background-color: #FFFFFF;
+}
+#stageFAQ1 {
+	border: 6px solid #0082C0;
+	height: 442px;
+	width: 808px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	overflow: hidden;
+	margin-top: 10px;
+	padding: 30px;
+	background-image: url(../images/FAQs/new/page1.png);
+}
+#stageFAQ2 {
+	border: 6px solid #0082C0;
+	height: 442px;
+	width: 808px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	overflow: hidden;
+	margin-top: 10px;
+	padding: 30px;
+	background-image: url(../images/FAQs/new/page2.png);
+}

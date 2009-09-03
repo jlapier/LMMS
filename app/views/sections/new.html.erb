@@ -1,0 +1,17 @@
+<div id="whitestage">
+  <h1>New section in <em><%= @learning_module.title %></em></h1>
+
+  <% form_for( :section, :url => { :action => :create, :learning_module_id => @learning_module }) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %>: <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.submit "Create" %>
+    </p>
+  <% end %>
+
+  <br/>
+  <p><%= link_to 'Back', learning_module_sections_path(@learning_module) %></p>
+</div>

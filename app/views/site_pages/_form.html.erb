@@ -1,0 +1,11 @@
+<%= form.error_messages %>
+
+<p>
+  <%= form.label :title %> (required):
+  <%= form.text_field :title %>
+</p>
+<p>
+  <%= form.label :body, "Body for the Page" %><br />
+  <%= form.text_area :body, :cols => 80, :rows => 5 %>
+</p>
+

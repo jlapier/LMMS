@@ -1,0 +1,14 @@
+<h1>Editing quiz_question</h1>
+
+<% form_for(:quiz_question, :url => { :action => :update, :learning_module_id => @learning_module, :section_id => @section,
+      :quiz_page_id => @quiz_page }, :html => { :method => :put } ) do |f| %>
+
+  <%= render :partial => f %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+
+<p><%= link_to 'Cancel edits and go back to the list', learning_module_section_quiz_page_quiz_questions_path %></p>

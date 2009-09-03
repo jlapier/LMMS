@@ -1,0 +1,24 @@
+<div class="quiz_side_image">
+  <% if @quiz_page.layout_image_file_name %>
+    <%= image_tag @quiz_page.layout_image.url %>
+  <% else %>
+    <%= image_tag @learning_module.layout_image.url %>
+  <% end %>
+</div>
+
+<div class="quiz_content">
+  <h1>Score for <%= @quiz_page.title %>: <%= @score %>%</h1>
+
+  <h3>Quiz questions for <%= @quiz_page.title %></h3>
+
+  <ol>
+  <% for quiz_question in @quiz_questions %>
+    <li>
+      <strong>Question:</strong>
+      <%=h quiz_question.body %><br/>
+      <span class="correct_answer">Correct Answer:</span> <%= quiz_question.correct_answer.body %><br/>
+      <em><%=h quiz_question.explanation %></em>
+    </li>
+  <% end %>
+  </ol>
+</div>

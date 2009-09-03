@@ -1,0 +1,51 @@
+<div class="edit_content_box">
+  <h1><%= link_to @learning_module.title, @learning_module %></h1>
+
+  <h2>Section: <%= @section.title %></h2>
+
+  <h3>New page</h3>
+
+  <% form_for(:content_page, :url => { :action => :create, :learning_module_id => @learning_module, :section_id => @section }) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %> (optional):
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :main_body, "Main Body for the Page - if this is a Q&A, this is the Q" %><br />
+      <%= f.text_area :main_body, :cols => 80, :rows => 5 %>
+    </p>
+    <p>
+      <%= link_to_function "Click here to add a 'secondary body' to this page", "add_secondary()", :id => 'secondary_body_link' %>
+      <div id="secondary_body_editor" style="display:none;">
+        <%= f.label :secondary_body, "Secondary Body - shown when 'more' link is clicked - if this is a Q&A, this is the A" %><br />
+        <%= f.text_area :secondary_body, :cols => 80, :rows => 5 %>
+      </div>
+    </p>
+    <p>
+      <%= f.submit "Create this page" %>
+    </p>
+  <% end %>
+  
+  <%= link_to 'Back', learning_module_section_path(@learning_module, @section) %>
+</div>
+
+<script type="text/javascript" src="/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+
+window.onload = function()
+{
+  var oFCKeditorMain = new FCKeditor( 'content_page[main_body]' ) ;
+  oFCKeditorMain.Height = "300px";
+  oFCKeditorMain.ReplaceTextarea();
+}
+
+function add_secondary() {
+  $('secondary_body_link').hide();
+  $('secondary_body_editor').show();
+  var oFCKeditorSec = new FCKeditor( 'content_page[secondary_body]' ) ;
+  oFCKeditorSec.Height = "300px";
+  oFCKeditorSec.ReplaceTextarea() ;
+}
+</script>

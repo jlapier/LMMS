@@ -1,0 +1,13 @@
+<p>
+  <b>Quiz question:</b>
+  <%=h @quiz_answer.quiz_question_id %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @quiz_answer.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_quiz_answer_path(@quiz_answer) %> |
+<%= link_to 'Back', quiz_answers_path %>

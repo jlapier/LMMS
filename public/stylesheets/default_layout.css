@@ -1,0 +1,135 @@
+root { 
+    display: block;
+}
+
+.full_page {
+  padding: 5px 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	line-height: 130%;
+  height: 524px;
+  overflow: auto;
+}
+
+#content {
+	padding: 5px 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	line-height: 130%;
+	margin: 4px 0 0 388px;
+  width: 430px;
+}
+
+.quiz_content {
+	padding: 5px 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	line-height: 130%;
+	margin: 4px 300px 0 0;
+  height: 411px;
+  overflow: auto;
+}
+
+.quiz_side_image {
+  width: 350px;
+  float:right;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  height: 425px;
+  background: #FFF;
+}
+
+.lm_content {
+	padding: 5px 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	line-height: 130%;
+	margin: 4px 360px 0 0;
+  height: 411px;
+  overflow: auto;
+}
+
+.lm_side_image {
+  width: 350px;
+  float:right;
+  padding: 20px;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  height: 425px;
+  background: #FFF;
+}
+
+.se_content {
+	padding: 5px 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	line-height: 130%;
+	margin: 4px 360px 0 0;
+  height: 411px;
+  overflow: auto;
+}
+
+.se_side_image {
+  width: 350px;
+  float: right;
+  padding: 0px;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  height: 425px;
+  background: #FFF;
+}
+
+.sp_content {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	line-height: 130%;
+	height: 504px;
+  overflow: auto;
+  padding: 8px 12px;
+  margin: 4px 0 0 0;
+}
+
+.sp_content_with_image {
+  margin: 4px 360px 0 0;
+}
+
+.sp_side_image {
+  width: 350px;
+  float: right;
+  padding: 20px;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  height: 524px;
+  background: #FFF;
+}
+
+
+.cp_content {
+  padding: 5px 10px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  line-height: 140%;
+  margin: 2px 0 0 300px;
+  height: 411px;
+  overflow: auto;
+}
+
+.cp_side_image {
+  width: 350px;
+  float:left;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  height: 425px;
+  background: #FFF;
+}
+
+.edit_content_box {
+  height: 471px;
+  overflow: auto;
+  padding: 4px 8px;
+}

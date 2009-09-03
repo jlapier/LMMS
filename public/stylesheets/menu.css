@@ -1,0 +1,108 @@
+menu_text {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	margin: 24px 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+#menuwrapper {
+	background-color: #000000;
+	background-image: url('/images/layout/menu_grad.gif');
+	height: 26px;
+	margin-top: 0px;
+	margin-left: 0px;
+	position: absolute;
+	-moz-box-shadow: 5px 5px 6px #005599;
+	box-shadow: 5px 5px 6px #005599;
+	width: 678px;
+	top: 70px;
+	left: 25px;
+	z-index: 10;
+}
+
+#menubar, #menubar ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+#menubar a, #menubar em {
+	display: block;
+	text-decoration: none;
+	font-size: 0.85em;
+	color: #666;
+	padding-top: 5px;
+	padding-right: 30px;
+	padding-bottom: 5px;
+	padding-left: 25px;
+}
+#menubar a.trigger {
+	background-image: url('/images/buttons/dropdownarrow.gif');
+	background-repeat: no-repeat;
+	background-position: right center;
+	padding-top: 3px;
+	padding-right: 30px;
+	padding-bottom: 5px;
+	padding-left: 25px;
+	font-size: 0.9em;
+	color: #FFF;
+	font-weight: bold;
+}
+
+#menubar li {
+	float: left;
+	width: 15em;
+	line-height: 18px;
+	margin-left: 0px;
+	margin-right: 25px;
+	padding: 0px;
+}
+
+#menubar  ul  li  {
+	width: 265px;
+}
+
+#menubar ul li a  {
+	color: #333333;
+}
+
+#menubar li ul {
+	position: absolute;
+	display: none;
+	background-color: #D7E0E4;
+	font-size: 13px;
+	width: 265px;
+	-moz-box-shadow: 5px 5px 5px #444;
+	box-shadow: 5px 5px 5px #444;
+}
+
+#menubar li:hover a, #menubar a:focus,
+#menubar a:active, #menubar li.hvr a {
+	color: #000000;
+	background-color: #A1C1DC;
+}
+
+#menubar li:hover ul, #menubar li.hvr ul {
+	display: block;
+}
+
+#menubar li:hover ul a, #menubar li.hvr ul a {
+	color: #000000;
+	background-color: transparent;
+}
+
+#menubar ul a:hover {
+	background-color: #E5853C!important;
+	color: #FFFFFF!important;
+}
+
+
+/* The single backslash \ character inside this comment
+causes IE5 Mac to ignore the following rule, which allows other
+browsers to render top-level menu items to their natural width.
+Do not edit this rule in any way. */
+#menubar li {width: auto;}
